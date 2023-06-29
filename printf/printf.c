@@ -12,12 +12,10 @@
 #include <stdio.h>
 #include "printf.h"
 
-
 #if !defined(OS_USE_SEMIHOSTING)
 #define STDIN_FILENO  0
 #define STDOUT_FILENO 1
 #define STDERR_FILENO 2
-
 
 
 // Must be global
@@ -44,7 +42,6 @@ TeUART_Return Printf_Init(UART_st* uart) {
   return UART_OK;
 }
 
-
 int _isatty(int fd) {
 
   if (fd >= STDIN_FILENO && fd <= STDERR_FILENO)
@@ -70,7 +67,6 @@ int _write(int fd, char* ptr, int len) {
   errno = EBADF;
   return -1;
 }
-
 
 int _close(int fd) {
 
@@ -105,7 +101,6 @@ int _read(int fd, char* ptr, int len) {
   errno = EBADF;
   return -1;
 }
-
 
 int _fstat(int fd, struct stat* st) {
 
