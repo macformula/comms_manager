@@ -1,5 +1,5 @@
 /*
- * ADXL345.h
+ * adxl345.h
  *
  *  Created on: Dec 24, 2022
  *      Author: hadyi
