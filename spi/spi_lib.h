@@ -1,12 +1,12 @@
 /*
- * spi.h
+ * spi_lib.h
  *
  *  Created on: Nov 11, 2022
  *      Author: Hady I.
  */
 
-#ifndef INC_SPI_H_
-#define INC_SPI_H_
+#ifndef INC_SPI_LIB_H_
+#define INC_SPI_LIB_H_
 
 /*---------------------- INCLUDES ----------------------*/
 #include "main.h"
@@ -92,4 +92,4 @@ TeSPI_Status SPI_Deinit(TsSPI* spi);
 TeSPI_Status SPI_Transmit_Receive(TsSPI* spi, uint8_t *tx_buf, uint8_t *rx_buf, uint8_t buf_len);
 
 
-#endif /* INC_SPI_H_ */
+#endif /* INC_SPI_LIB_H_ */

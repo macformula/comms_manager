@@ -1,16 +1,13 @@
 /*
- * uart.c
+ * uart_lib.c
  *
  *  Created on: Oct 26, 2022
  *      Author: ivanl
  */
 
-#ifndef SRC_UART_C_
-#define SRC_UART_C_
-
 /*---------------------- INCLUDES ----------------------*/
 
-#include "uart.h"
+#include "uart_lib.h"
 
 /*------------- PRIVATE FUNCTION DEFINITIONS ------------ */
 
@@ -209,5 +206,3 @@ TeUART_Return UART_Deinit(UART_st* uart)
 
 	return UART_OK;
 }
-
-#endif /* SRC_UART_C_ */

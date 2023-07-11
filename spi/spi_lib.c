@@ -1,12 +1,12 @@
 /*
- * spi.c
+ * spi_lib.c
  *
  *  Created on: Nov 11, 2022
  *      Author: Hady I.
  */
 
 /*---------------------- INCLUDES ----------------------*/
-#include "spi.h"
+#include "spi_lib.h"
 
 /*---------------------- MACROS ----------------------*/
 #define TIMEOUT (uint8_t)100
