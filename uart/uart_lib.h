@@ -88,4 +88,4 @@ TeUART_Return UART_Transmit(UART_st* uart, uint8_t* tx_buf, uint8_t buf_len);
 TeUART_Return UART_Receive(UART_st* uart, uint8_t* rx_buf, uint8_t buf_len);
 TeUART_Return UART_Deinit(UART_st* uart);
 
-#endif /* INC_UART_H_ */
+#endif /* INC_UART_LIB_H_ */
