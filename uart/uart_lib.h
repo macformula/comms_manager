@@ -1,12 +1,12 @@
 /*
- * uart.h
+ * uart_lib.h
  *
  *  Created on: Oct 26, 2022
  *      Author: ivanl
  */
 
-#ifndef INC_UART_H_
-#define INC_UART_H_
+#ifndef INC_UART_LIB_H_
+#define INC_UART_LIB_H_
 
 
 /*---------------------- INCLUDES ----------------------*/
