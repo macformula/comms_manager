@@ -6,7 +6,7 @@
 
 #include "stm32f7xx_hal.h"
 #include <sys/stat.h>
-#include "uart.h"
+#include "uart_lib.h"
 
 TeUART_Return Printf_Init(UART_st* uart);
 int _isatty(int fd);
