@@ -42,7 +42,7 @@ static TeUART_Return UART_Select(UART_st* uart)
 			uart->huart -> Instance = UART8;
 			break;
 		default:
-			return INVALID_UART_NUM;
+			return UART_INVALID_UART_NUM;
 	}
 
 	return UART_OK;
@@ -53,7 +53,7 @@ static TeUART_Return UART_Baud_Rate_Select(UART_st* uart)
 {
 	// Baud rate must be between 123 Bits/s and 500 KBits/s, stated in .ioc requirements
 	if(uart->baudrate < MIN_UART_BAUDRATE || uart->baudrate > MAX_UART_BAUDRATE){
-		return BAUDRATE_OUT_OF_BOUNDS;
+		return UART_BAUDRATE_OUT_OF_BOUNDS;
 	}
 
 	uart->huart->Init.BaudRate = uart->baudrate;
@@ -76,7 +76,7 @@ static TeUART_Return UART_Datasize_Select(UART_st* uart)
 			uart->huart -> Init.WordLength = UART_WORDLENGTH_9B;
 			break;
 		default:
-			return INVALID_DATASIZE;
+			return UART_INVALID_DATASIZE;
 	}
 
 	return UART_OK;
@@ -97,7 +97,7 @@ static TeUART_Return UART_Mode_Select(UART_st* uart)
 			uart->huart -> Init.Mode = UART_MODE_TX_RX;
 			break;
 		default:
-			return INVALID_MODE;
+			return UART_INVALID_MODE;
 	}
 
 	return UART_OK;
@@ -115,7 +115,7 @@ static TeUART_Return UART_MSB_Select(UART_st* uart)
 			uart->huart -> AdvancedInit.MSBFirst = UART_ADVFEATURE_MSBFIRST_ENABLE;
 			break;
 		default:
-			return INVALID_BIT_POSITION;
+			return UART_INVALID_BIT_POSITION;
 	}
 
 	return UART_OK;
@@ -176,7 +176,7 @@ TeUART_Return UART_Transmit(UART_st* uart, uint8_t tx_buf[], uint8_t buf_len)
 
 	tx_response = HAL_UART_Transmit(uart->huart, tx_buf, buf_len, TIMEOUT);
 	if (tx_response != HAL_OK) {
-		return TRANSMIT_FAILED;
+		return UART_TRANSMIT_FAILED;
 	}
 
 	return UART_OK;
@@ -189,7 +189,7 @@ TeUART_Return UART_Receive(UART_st* uart, uint8_t rx_buf[], uint8_t buf_len)
 
 	rx_response = HAL_UART_Receive(uart->huart, rx_buf, buf_len, TIMEOUT);
 	if (rx_response != HAL_OK) {
-		return RECEIVE_FAILED;
+		return UART_RECEIVE_FAILED;
 	}
 
 	return UART_OK;
@@ -201,7 +201,7 @@ TeUART_Return UART_Deinit(UART_st* uart)
 
 	deinit_response = HAL_UART_DeInit(uart->huart);
 	if (deinit_response != HAL_OK) {
-		return DEINIT_FAILED;
+		return UART_DEINIT_FAILED;
 	}
 
 	return UART_OK;
